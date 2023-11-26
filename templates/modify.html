@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+        <div class="row align-items-center g-lg-5 py-5">
+        <div class="col-md-10 mx-auto col-lg-5">
+            <form class="p-4 p-md-5 border rounded-3" action="/modify" method="post">
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" spellcheck="false">
+                    <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" name="confirmation" id="confirmation" placeholder="Confirm password">
+                    <label for="floatingPassword" id="confirm-text">Confirm password</label>
+                </div>
+                <button class="w-100 btn btn-lg btn-secondary" type="submit" id="confirm">Confirm</button>
+            </form>
+        </div>
+        </div>
+    </div>
+    <script src="/static/js/register.js"></script>
+{% endblock %}

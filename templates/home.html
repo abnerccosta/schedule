@@ -1,0 +1,108 @@
+{% extends "bar.html" %}
+
+{% block dropdown_menu %}
+
+    <script src="/static/js/home.js"></script>
+    <link rel="stylesheet" href="/static/css/home.css">
+
+    <ul class="navbar-nav me-auto mx-3 mb-lg-0">
+        <li class="dropdown">
+            <a class="nav-link dropdown-toggle link-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Calendar
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#calendar-add" href="#">Add task</a></li>            
+                <li><a id="calendar-change-select" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#calendar-change">Change date</a></li>
+                <li><a id="calendar-remove-select" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#calendar-remove">Remove</a></li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="navbar-nav me-auto mx-3 mb-lg-0">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle link-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Notes
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#notes-add" href="#">Add note</a></li>
+                <li><a id="notes-modify-select" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#notes-modify">Modify</a></li>
+                <li><a id="notes-remove-select" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#notes-remove">Remove</a></li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="navbar-nav me-auto mx-3 mb-lg-0">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle link-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Goals
+            </a>
+            <ul class="dropdown-menu">
+                <li><a id="goals-remove-select" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#goals-remove">Exclude all</a></li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="navbar-nav me-auto mx-3 mb-lg-0">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle link-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Files
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#files-add" href="#">Add file</a></li>
+                <li><a id="files-remove-select" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#files-remove" href="#">Remove</a></li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="navbar-nav me-auto mx-3 mb-lg-0">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle link-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Settings
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/modify">Modify account</a></li>
+                <form action="/theme" method="POST">
+                    <li><button class="dropdown-item" type="submit">Change theme</button></li>
+                </form>
+                <li><a class="dropdown-item" href="/logout">Logout</a></li>
+            </ul>
+        </li>
+    </ul>
+{% endblock %}
+{% block main %}
+    <div class="container overflow-hidden text-center">
+        <div class="row flex-column flex-sm-row gy-3">
+            <div class="col">
+                {% include 'calendar.html' %}
+                <div class="card">
+                    <div class="card-body card-menu">
+                        <h5 class="card-title">Calendar</h5>
+                        <div class="list-group" id="calendar-menu"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                {% include 'notes.html' %}
+                <div class="card">
+                    <div class="card-body card-menu">
+                        <h5 class="card-title">Notes</h5>
+                        <div class="list-group" id="notes-menu"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                {% include 'files.html' %}
+                <div class="card">
+                    <div class="card-body card-menu">
+                        <h5 class="card-title">Files</h5>
+                        <div class="list-group" id="files-menu"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                {% include 'goals.html' %}
+                <div class="card">
+                    <div class="card-body card-menu">
+                        <h5 class="card-title">Goals</h5>
+                        <textarea id="goals-text-area" class="card-text form-control" rows="15"></textarea>
+                    </div>
+                </div>
+            </div>
+    </div>
+{% endblock %}

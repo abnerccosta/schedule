@@ -1,0 +1,101 @@
+
+<link rel="stylesheet" href="/static/css/calendar.css">
+<script src="/static/js/calendar.js"></script>
+
+<div class="modal fade" id="calendar-add" tabindex="-1" aria-labelledby="calendarAdd" aria-hidden="true">
+    <form action="/calendar" method="post">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title">Add task</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="calendar-add-title" class="form-label">Name</label>
+                        <textarea class="form-control" name="calendar-add-title" rows="1"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="calendar-date" class="form-label">Date</label>
+                        <input type="date" class="calendar-date" name="calendar-date" value="2023-09-20"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="add-calendar-description" class="form-label">Description</label>
+                        <textarea class="form-control" name="calendar-add-description" rows="10"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button class="btn btn-secondary" type="submit" id="calendar-submit-add" href="/calendar">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<div class="modal fade" id="calendar-change" tabindex="-1" aria-labelledby="calendarChange" aria-hidden="false">
+    <form action="/calendar" method="post">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Change task date</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <select class="form-select" name="calendar-change-title" aria-label="Select task">
+                            <option selected class="default-option">Select task</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="calendar-date" class="form-label">New date</label>
+                        <input type="date" class="calendar-date" name="calendar-date" value="2023-09-20"/>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="submit" id="calendar-submit-add" href="/calendar">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="modal fade" id="calendar-remove" tabindex="-1" aria-labelledby="calendarRemove" aria-hidden="false">
+    <form action="/calendar" method="post">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Remove task</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <select class="form-select" name="calendar-remove-title" aria-label="Select task">
+                            <option selected class="default-option">Select task</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="submit" id="calendar-submit-remove" href="/calendar">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="modal fade" id="calendar-show" tabindex="-1" aria-labelledby="calendarTask" aria-hidden="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="/calendar" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="calendar-list-title" name="calendar-list-title"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div id="calendar-list-text"></div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="submit" id="calendar-submit-conclude" href="/calendar">Conclude</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

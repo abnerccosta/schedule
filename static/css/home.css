@@ -1,0 +1,21 @@
+.card-menu {
+    height: 30rem;
+}
+
+.list-group {
+    max-height: 25rem;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.list-group::-webkit-scrollbar {
+    display: none;
+}
+
+#note-content {
+    text-align: left;
+}
+
+.navbar-nav {
+    text-align: left;
+}

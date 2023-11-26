@@ -1,0 +1,35 @@
+schedule - database architecture, ver 1.0
+
+CREATE TABLE users (
+	id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+	email TEXT NOT NULL,
+	hash TEXT NOT NULL
+);
+
+CREATE TABLE notes (
+	user_id INTEGER,
+	title TEXT,
+	text TEXT,
+	day INTEGER,
+	month INTEGER,
+	year INTEGER
+);
+
+CREATE TABLE calendar (
+	user_id INTEGER,
+	title TEXT,
+	description TEXT,
+	day INTEGER,
+	month INTEGER,
+	year INTEGER
+);
+
+CREATE TABLE goals (
+	user_id INTEGER,
+	content TEXT
+);
+
+CREATE TABLE custom (
+	user_id INTEGER,
+	theme INTEGER
+);

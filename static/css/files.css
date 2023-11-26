@@ -1,0 +1,11 @@
+input::file-selector-button {
+    display: none;
+}
+
+.file-selector-space {
+    margin-bottom: 0.75rem;
+}
+
+.file-delete-space {
+    margin: 0.75rem;
+}

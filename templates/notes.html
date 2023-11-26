@@ -1,0 +1,91 @@
+
+<link rel="stylesheet" href="/static/css/calendar.css">
+<script src="/static/js/notes.js"></script>
+
+<div class="modal fade" id="notes-add" tabindex="-1" aria-labelledby="notesAdd" aria-hidden="true">
+    <form action="/notes" method="post">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title">Add note</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="notes-add-title" class="form-label">Name</label>
+                        <textarea class="form-control" name="notes-add-title" rows="1"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="notes-add-text" class="form-label">Text</label>
+                        <textarea class="form-control" name="notes-add-text" rows="10"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button class="btn btn-secondary" type="submit" id="notes-submit-add" href="/notes">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="modal fade" id="notes-modify" tabindex="-1" aria-labelledby="notesModify" aria-hidden="false">
+    <form action="/notes" method="post">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modify note</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <select class="form-select" id="notes-modify-title" name="notes-modify-title" aria-label="Select task">
+                            <option selected class="default-option">Select note</option>
+                        </select>
+                    </div>
+                    <div class="mb-3" id="notes-date-camp"></div>
+                    <div class="mb-3" id="notes-text-camp"></div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="submit" id="notes-submit-modify" href="/notes">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="modal fade" id="notes-remove" tabindex="-1" aria-labelledby="notesRemove" aria-hidden="false">
+    <form action="/notes" method="post">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Remove note</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <select class="form-select" name="notes-remove-title" aria-label="Select task">
+                            <option selected class="default-option">Select note</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="submit" id="notes-submit-remove" href="/notes">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="modal fade" id="notes-show" tabindex="-1" aria-labelledby="notesNote" aria-hidden="false">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="notes-list-title" name="notes-list-title"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="notes-list-text"></div>
+            </div>
+        </div>
+    </div>
+</div>

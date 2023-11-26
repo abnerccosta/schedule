@@ -1,0 +1,16 @@
+Schedule, ver 1.0 - software requirements specification
+
+All specificity of the program will be listed below:
+
+Written in HTML, CSS, JavaScript, Python and SQL.
+Uses Flask as its framework, and Jinja as template engine.
+Allow user to:
+	create new account;
+	modify their email and/or password;
+	add notes, modify or exclude them;
+	schedule tasks on calendar, change their date or exclude them;
+	list goals, and exclude them if desired;
+	have a break at coffee time, with possibly some games;
+	customize the page by changing its color (dark/white mode);
+	add or remove files in a simple file manager;
+	login and logout.

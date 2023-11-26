@@ -1,0 +1,64 @@
+
+<link rel="stylesheet" href="/static/css/files.css">
+<script src="/static/js/files.js"></script>
+
+<div class="modal fade" id="files-add" tabindex="-1" aria-labelledby="filesAdd" aria-hidden="false">
+    <form action="/files" method="post" enctype="multipart/form-data">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add file</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="input-group file-selector-space">
+                    <input type="file" class="form-control" id="files-select-add" name="files-select-add" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                    <button class="btn btn-secondary" type="submit" data-bs-toggle="modal" data-bs-target="files-add-select">Upload</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="modal fade" id="files-remove" tabindex="-1" aria-labelledby="filesRemove" aria-hidden="false">
+    <form action="/files" method="post">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Remove file</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3" id="files-select-area">
+                        <select class="form-select" id="files-selector-folders" name="files-selector-folders" aria-label="Select file">
+                            <option selected class="default-option">Select folder</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="submit" id="calendar-submit-add" href="/files">Remove</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="modal fade" id="files-show" tabindex="-1" aria-labelledby="fileShow" aria-hidden="false">
+    <form action="/files" method="post">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="folder-title"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <div id="folder-view-area"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-secondary" id="files-open">Open</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
