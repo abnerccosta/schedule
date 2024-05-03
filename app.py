@@ -135,12 +135,16 @@ def register():
         # Create temporary variables
         email = request.form.get("email")
         hash = generate_password_hash(request.form.get("password"), salt_length=16)
+        theme = 0
 
         # Register user
         db.execute("INSERT INTO users (email, hash) VALUES (?, ?)", email, hash)
 
         # User path name
         user_path = db.execute("SELECT id FROM users WHERE email = (?)", email)[0]["id"]
+
+        # Register user default theme
+        db.execute("INSERT INTO custom (user_id, theme) VALUES (?, ?)", user_path, theme)
 
         # Create user folder
         folders = ["Documents", "Pictures", "Music", "Videos"]
